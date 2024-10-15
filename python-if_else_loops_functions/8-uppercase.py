@@ -2,10 +2,9 @@
 def uppercase(str):
     result = ""
     for char in str:
-        # Check if the character is a lowercase letter
-        if ord(char) >= 97 and ord(char) <= 122:  # 'a' to 'z'
-            # Convert to uppercase by adjusting ASCII value
-            result += chr(ord(char) - 32)
+        if ord(char) >= 97 and ord(char) <= 122:  # Check if character is lowercase
+            result += chr(ord(char) - 32)  # Convert to uppercase
         else:
-            result += char  # Non-lowercase characters remain unchanged
-    print(result
+            result += char  # Keep non-lowercase characters unchanged
+
+    print("{}".format(result))  # Print the resulting uppercase string
