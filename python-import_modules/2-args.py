@@ -15,4 +15,3 @@ if __name__ == "__main__":
         # Print each argument with its position
         for i in range(1, num_args + 1):
             print(f"{i}: {sys.argv[i]}")
-
