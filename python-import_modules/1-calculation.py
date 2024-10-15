@@ -7,7 +7,7 @@ if __name__ == "__main__":
     a = 10
     b = 5
 
-    # Call the imported functions and print the results
+    # Print the results using f-strings (no .format())
     print(f"{a} + {b} = {add(a, b)}")
     print(f"{a} - {b} = {sub(a, b)}")
     print(f"{a} * {b} = {mul(a, b)}")
