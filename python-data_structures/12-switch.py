@@ -2,5 +2,7 @@
 a = 10
 b = 89
 # Switch values of a and b
-a, b = b, a
+temp = a
+a = b
+b = temp
 print("a={} - b={}".format(a, b))
