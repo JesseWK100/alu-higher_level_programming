@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    # Import the functions from calculator_1.py in a single line
-    from calculator_1 import add, sub, mul, div
+from calculator_1 import add, sub, mul, div
 
-    # Define the variables a and b
+def main():
     a = 10
     b = 5
+    print("{} + {} = {}".format(a, b, add(a, b)))
+    print("{} - {} = {}".format(a, b, sub(a, b)))
+    print("{} * {} = {}".format(a, b, mul(a, b)))
+    print("{} / {} = {}".format(a, b, div(a, b)))
 
-    # Print the results using f-strings (no .format())
-    print(f"{a} + {b} = {add(a, b)}")
-    print(f"{a} - {b} = {sub(a, b)}")
-    print(f"{a} * {b} = {mul(a, b)}")
-    print(f"{a} / {b} = {div(a, b)}")
+if __name__ == "__main__":
+    main()
