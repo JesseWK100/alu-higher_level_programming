@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a class Square with a private instance attribute size and validation."""
+"""Defines a class Square with a private attribute size and validation."""
 
 
 class Square:
@@ -10,7 +10,7 @@ class Square:
 
         Args:
             size (int): The size of the square. Defaults to 0.
-        
+
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
