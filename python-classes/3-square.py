@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a class Square with a private attribute size, validation, and area method."""
+"""Defines a class Square with size validation and an area method."""
 
 
 class Square:
