@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-# Defines a class Square with private size and position attributes,
-# size and position getters and setters, area method, and print functionality.
+"""Defines a class Square with private size and position attributes,
+size and position getters and setters, area method, and print functionality.
+"""
+
 
 class Square:
     """Represents a square with size and position validation, area calculation,
@@ -86,3 +88,4 @@ class Square:
         # Print the square
         for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
+
