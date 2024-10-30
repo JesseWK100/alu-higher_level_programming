@@ -4,6 +4,7 @@ Module 6-square.py
 Defines a Square class with attributes, methods, and properties.
 """
 
+
 class Square:
     """
     Represents a square with private instance attributes 'size' and 'position'.
