@@ -7,7 +7,5 @@ def safe_print_list_integers(my_list=[], x=0):
             count += 1  # Increment count for each successful integer print
         except (ValueError, TypeError):
             continue  # Skip non-integer values silently
-        except IndexError:
-            break  # Stop if x exceeds list length
     print("")  # New line after printing all integers
     return count  # Return the number of integers printed
