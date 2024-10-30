@@ -4,6 +4,7 @@ Module 5-square.py
 Defines a Square class with attributes, methods, and properties.
 """
 
+
 class Square:
     """
     Represents a square with private instance attribute 'size'.
@@ -38,7 +39,7 @@ class Square:
     @size.setter
     def size(self, value):
         """
-        Sets the size of the square, ensuring it is an integer and non-negative.
+        Sets the size of the square, ensuring it is an integer and non-negative
 
         Args:
             value (int): The new size of the square's sides.
