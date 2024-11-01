@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module that defines the Square class, which inherits from Rectangle."""
 
+
 class BaseGeometry:
     """BaseGeometry class."""
     
