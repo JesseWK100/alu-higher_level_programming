@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Module that defines the Square class, which inherits from Rectangle."""
 
+
 class BaseGeometry:
-    """BaseGeometry class with area method and integer_validator."""
+   """BaseGeometry class with area method and integer_validator."""
     
     def area(self):
         """Raises an Exception as area() is not implemented in BaseGeometry."""
@@ -17,7 +18,7 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    """Rectangle class inheriting from BaseGeometry."""
+   """Rectangle class inheriting from BaseGeometry."""
     
     def __init__(self, width, height):
         """Initialize width and height after validation."""
@@ -36,7 +37,7 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
-    """Square class inheriting from Rectangle, with custom string output."""
+   """Square class inheriting from Rectangle, with custom string output."""
     
     def __init__(self, size):
         """Initialize size after validation."""
