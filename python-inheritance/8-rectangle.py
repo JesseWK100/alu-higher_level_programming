@@ -1,31 +1,22 @@
 #!/usr/bin/python3
-"""A module that defines a Rectangle class which inherits from BaseGeometry."""
+class BaseGeometry:
+    """BaseGeometry class"""
 
-from 7-base_geometry import BaseGeometry  # Import BaseGeometry
-
+    def integer_validator(self, name, value):
+        """Validates that value is a positive integer"""
+        if type(value) is not int:
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
 class Rectangle(BaseGeometry):
-    """Class representing a rectangle that inherits from BaseGeometry."""
+    """Rectangle class that inherits from BaseGeometry"""
 
     def __init__(self, width, height):
-        """Initializes a new Rectangle instance.
-        
-        Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
-        
-        Validates the width and height as positive integers.
-        """
+        """Initialize width and height with validation"""
         self.integer_validator("width", width)
-        self.__width = width
         self.integer_validator("height", height)
+        self.__width = width
         self.__height = height
 
-    def area(self):
-        """Calculates the area of the rectangle."""
-        return self.__width * self.__height
-
-    def __dir__(self):
-        """Return the list of attributes and methods for this instance."""
-        return super().__dir__() + ['area', 'integer_validator']
-
-
+    def __str__(self):
+        return f"[Rectangle] {self.__width}/{self.__height}"
