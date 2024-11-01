@@ -21,10 +21,10 @@ class Rectangle(BaseGeometry):
     
     def __init__(self, width, height):
         """Instantiation with width and height."""
-        self.__width = width
-        self.__height = height
         self.integer_validator("width", width)
+        self.__width = width
         self.integer_validator("height", height)
+        self.__height = height
 
     def area(self):
         """Returns the area of the rectangle."""
@@ -40,8 +40,8 @@ class Square(Rectangle):
     
     def __init__(self, size):
         """Instantiation with size."""
-        self.__size = size
         self.integer_validator("size", size)
+        self.__size = size
         super().__init__(size, size)
 
     def area(self):
