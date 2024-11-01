@@ -1,14 +1,19 @@
 #!/usr/bin/python3
-lookup = __import__('0-lookup').lookup
+"""
+0-lookup.py
 
-class MyClass1(object):
-    pass
+This module defines the lookup function that returns a list of available
+attributes and methods of an object.
+"""
 
-class MyClass2(object):
-    my_attr1 = 3
-    def my_meth(self):
-        pass
+def lookup(obj):
+    """Return a list of available attributes and methods of an object.
 
-print(lookup(MyClass1))
-print(lookup(MyClass2))
-print(lookup(int))
+    Args:
+        obj: The object to inspect.
+
+    Returns:
+        A list of strings representing the names of the object's attributes
+        and methods.
+    """
+    return dir(obj)
