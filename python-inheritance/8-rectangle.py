@@ -1,32 +1,7 @@
 #!/usr/bin/python3
-"""A module that defines a BaseGeometry class and a Rectangle class."""
+"""A module that defines a Rectangle class which inherits from BaseGeometry."""
 
-class BaseGeometry:
-    """Base class for geometry-related shapes."""
-
-    def area(self):
-        """Calculates the area of the geometry shape.
-        
-        Raises:
-            Exception: area() is not implemented.
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Validates the value to be a positive integer.
-        
-        Args:
-            name (str): The name of the parameter.
-            value (int): The value to be validated.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is less than or equal to zero.
-        """
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+from 7-base_geometry import BaseGeometry  # Import BaseGeometry
 
 class Rectangle(BaseGeometry):
     """Class representing a rectangle that inherits from BaseGeometry."""
@@ -52,4 +27,5 @@ class Rectangle(BaseGeometry):
     def __dir__(self):
         """Return the list of attributes and methods for this instance."""
         return super().__dir__() + ['area', 'integer_validator']
+
 
