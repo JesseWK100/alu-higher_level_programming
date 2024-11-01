@@ -45,12 +45,11 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__height = height
 
-    @property
-    def width(self):
-        """Gets the width of the rectangle."""
-        return self.__width
+    def area(self):
+        """Calculates the area of the rectangle."""
+        return self.__width * self.__height
 
-    @property
-    def height(self):
-        """Gets the height of the rectangle."""
-        return self.__height
+    def __dir__(self):
+        """Return the list of attributes and methods for this instance."""
+        return super().__dir__() + ['area', 'integer_validator']
+
