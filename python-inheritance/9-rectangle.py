@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for Rectangle class based on BaseGeometry."""
 
+
 class BaseGeometry:
     """A class for geometric operations."""
 
