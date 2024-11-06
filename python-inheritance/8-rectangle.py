@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """
-Module for Rectangle class that inherits from BaseGeometry.
+Module: 8-rectangle
+Defines a Rectangle class that inherits from BaseGeometry.
 
 Classes:
-    Rectangle: Represents a rectangle with validated width and height.
+    Rectangle: Represents a rectangle, with validated positive integer dimensions.
 """
 
 # Importing the BaseGeometry class
@@ -11,16 +12,19 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """
-    Represents a rectangle using BaseGeometry for integer validation.
-    
+    A class to represent a rectangle.
+
+    This class inherits from BaseGeometry and validates that width and height
+    are positive integers using the integer_validator method from BaseGeometry.
+
     Attributes:
-        __width (int): The width of the rectangle.
-        __height (int): The height of the rectangle.
+        __width (int): The width of the rectangle (private).
+        __height (int): The height of the rectangle (private).
     """
 
     def __init__(self, width, height):
         """
-        Initializes a rectangle with validated width and height.
+        Initializes a Rectangle instance with validated width and height.
 
         Parameters:
             width (int): The width of the rectangle, must be a positive integer.
