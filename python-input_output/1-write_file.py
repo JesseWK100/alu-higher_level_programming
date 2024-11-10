@@ -14,7 +14,7 @@ def write_file(filename="", text=""):
     """
     Writes a string to a text file (UTF-8 encoding) and returns the number of
     characters written.
-    If the file does not exist, it will be created. If it does exist, its content
+    If the file does not exist, it will be created. If it does exist, content
     will be overwritten.
 
     Args:
