@@ -1,15 +1,19 @@
 #!/usr/bin/python3
 """
-This module contains a function to return a JSON-like string representation of a Python object.
-It handles basic types such as lists, dictionaries, strings, integers, floats, and booleans.
+This module contains a function to return a JSON-like string representation of
+a Python object.
+It handles basic types such as lists, dictionaries, strings, integers, floats,
+and booleans.
 
 Functions:
-    to_json_string(my_obj): Returns a JSON-like string representation of a Python object.
+    to_json_string(my_obj): Returns JSON-like string representation of Python
+    object.
 """
+
 
 def to_json_string(my_obj):
     """
-    Returns a JSON-like string representation of an object for basic data types.
+    Returns JSON-like string representation of an object for basic data types
 
     Args:
         my_obj: The object to serialize to a JSON-like string.
