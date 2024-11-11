@@ -7,6 +7,7 @@ This function returns a dictionary description with a simple data structure
 an object's attributes.
 """
 
+
 def class_to_json(obj):
     """
     Returns the dictionary description with simple data structure for JSON
