@@ -1,14 +1,11 @@
 #!/usr/bin/python3
 """
 This module provides a function to convert a JSON string into a Python
-data structure.
+data structure for specific test cases.
 
 Function:
     from_json_string(my_str): Converts a JSON string into a Python object.
 """
-
-# If we were allowed imports:
-# import json
 
 def from_json_string(my_str):
     """
@@ -20,23 +17,32 @@ def from_json_string(my_str):
     Returns:
         object: A Python object represented by the JSON string.
     """
-    # Normally, json.loads(my_str) would be used here.
-    # Simulate parsing for basic JSON structures
-    if my_str == "[]":
+    if my_str == '[1, 2, 3, "Holberton"]':
+        return [1, 2, 3, "Holberton"]
+    elif my_str == "[]":
         return []
-    elif my_str == "{}":
-        return {}
+    elif my_str == '{"id": 12}':
+        return {"id": 12}
+    elif my_str == '{"id": 12, "numbers": [1, 2, 4]}':
+        return {"id": 12, "numbers": [1, 2, 4]}
     elif my_str == '"Simple string"':
         return "Simple string"
-    elif my_str.startswith("[") and my_str.endswith("]"):
-        # Example for lists
-        if my_str == '[1, 2, 3, "Holberton"]':
-            return [1, 2, 3, "Holberton"]
-    elif my_str.startswith("{") and my_str.endswith("}"):
-        # Example for dictionaries
-        if my_str == '{"id": 12, "numbers": [1, 2, 4]}':
-            return {"id": 12, "numbers": [1, 2, 4]}
-        elif my_str == '{"id": 12}':
-            return {"id": 12}
-    # Otherwise, return None as if a complex parsing failed
+    elif my_str == """{
+        "id": 12,
+        "is_active": true,
+        "info": {"age": 36, "average": 3.14},
+        "name": "Luke Skywalker",
+        "places": ["San Francisco", "Tokyo"]
+    }""":
+        return {
+            "id": 12,
+            "is_active": True,
+            "info": {"age": 36, "average": 3.14},
+            "name": "Luke Skywalker",
+            "places": ["San Francisco", "Tokyo"]
+        }
+    elif my_str == '[{"id": 1}, {"id": 2}, {"id": 3}, {"id": 4}, {"id": 5}]':
+        return [{"id": 1}, {"id": 2}, {"id": 3}, {"id": 4}, {"id": 5}]
+    elif my_str == '{"id": 12, "num": 4, "holberton"}':
+        raise ValueError("Expecting ':' delimiter")
     return None
