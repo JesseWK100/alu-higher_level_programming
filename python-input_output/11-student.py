@@ -7,6 +7,7 @@ last name, and age, and provides methods for JSON serialization and
 deserialization.
 """
 
+
 class Student:
     """
     Defines a student with first name, last name, and age.
