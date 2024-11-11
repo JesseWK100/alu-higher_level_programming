@@ -7,6 +7,7 @@ first name, last name, and age, and a method to retrieve a dictionary
 representation of the instance.
 """
 
+
 class Student:
     """
     Defines a student with first name, last name, and age.
