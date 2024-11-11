@@ -33,10 +33,10 @@ def to_json_string(my_obj):
     elif isinstance(my_obj, dict):
         items = [
                 to_json_string(key) + ": " + to_json_string(value)
-    for key, value in my_obj.items()
+        for key, value in my_obj.items()
                 ]
         return "{" + ", ".join(items) + "}"
     else:
         raise TypeError(
-        f"Object of type {type(my_obj).__name__} is not JSON serializable"
-    )
+            f"Object of type {type(my_obj).__name__} is not JSON serializable"
+        )
