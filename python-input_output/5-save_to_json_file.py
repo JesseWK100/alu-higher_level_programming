@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """
 Module 5-save_to_json_file.py
-Contains a function that writes an object to a text file using JSON representation.
+Contains function that writes object to text file using JSON representation.
 """
 
 import json
+
 
 def save_to_json_file(my_obj, filename):
     """
@@ -30,7 +31,7 @@ if __name__ == "__main__":
     my_dict = {
         'id': 12,
         'name': "John",
-        'places': [ "San Francisco", "Tokyo" ],
+        'places': ["San Francisco", "Tokyo"],
         'is_active': True,
         'info': {
             'age': 36,
@@ -41,7 +42,7 @@ if __name__ == "__main__":
 
     try:
         filename = "my_set.json"
-        my_set = { 132, 3 }
+        my_set = {132, 3}
         save_to_json_file(my_set, filename)
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
