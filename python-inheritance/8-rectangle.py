@@ -6,7 +6,6 @@ the Rectangle class inherits from BaseGeometry and includes
 validation for width and height using the integer_validator method.
 """
 
-
 class BaseGeometry:
     """Base geometry class with basic validation methods."""
 
