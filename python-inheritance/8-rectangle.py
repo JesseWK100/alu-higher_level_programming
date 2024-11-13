@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-This module defines the Rectangle class that inherits from BaseGeometry.
-The Rectangle class includes validation for width and height using the
-integer_validator method from BaseGeometry.
+This module defines the BaseGeometry and Rectangle classes.
+The BaseGeometry class provides basic validation methods, and
+the Rectangle class inherits from BaseGeometry and includes
+validation for width and height using the integer_validator method.
 """
 
 class BaseGeometry:
