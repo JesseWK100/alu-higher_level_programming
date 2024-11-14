@@ -9,7 +9,7 @@ It includes a method to print the list in sorted order.
 
 class MyList(list):
     "A class that inherits from list with additional method to print sorted"
-    
+   
     def print_sorted(self):
         """Prints the list in ascending sorted order."""
         sorted_list = sorted(self)  # Sort the list in ascending order
