@@ -1,10 +1,7 @@
--- Lists the genre names associated with the show "Dexter" in the hbtn_0d_tvshows database.
-SELECT g.name
-FROM tv_shows AS ts
-JOIN tv_show_genres AS tsg ON ts.id = tsg.show_id
-JOIN genres AS g ON tsg.genre_id = g.id
--- Filters to retrieve genres for the show with the title "Dexter."
-WHERE ts.title = 'Dexter'
--- Sorts results by genre name in ascending order.
-ORDER BY g.name ASC;
-
+-- Lists all genres of the show 'Dexter' from the hbtn_0d_tvshows database.
+SELECT genres.name
+FROM tv_shows
+JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
+JOIN genres ON tv_show_genres.genre_id = genres.id
+WHERE tv_shows.title = 'Dexter'
+ORDER BY genres.name ASC;
