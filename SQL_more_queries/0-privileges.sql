@@ -1,3 +1,5 @@
--- Create user 'user_0d_2' and grant privileges
-CREATE USER 'user_0d_2'@'localhost';
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost';
+-- List the privileges of 'user_0d_1' on localhost
+SHOW GRANTS FOR 'user_0d_1'@'localhost';
+
+-- List the privileges of 'user_0d_2' on localhost
+SHOW GRANTS FOR 'user_0d_2'@'localhost';
