@@ -1,9 +1,8 @@
--- SHOWS TITLE OF ALL SHOWS THAT ARE COMEDIES
-SELECT t.`title`
+-- RECORDS: List of all shows with their genre names
+SELECT  t.`title`, g.`name`
  FROM `tv_shows` AS t
-	INNER JOIN `tv_show_genres` AS s
+	LEFT JOIN `tv_show_genres` AS s
 	ON t.`id` = s.`show_id`
-	INNER JOIN `tv_genres` AS g
-	ON g.`id` = s.`genre_id`
-	WHERE g.`name` = "Comedy"
-ORDER BY t.`title`;
+	LEFT JOIN `tv_genres` AS g
+	ON s.`genre_id` = g.`id`
+ORDER BY t.`title`, g.`name`;
