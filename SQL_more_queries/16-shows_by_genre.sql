@@ -1,7 +1,9 @@
--- Lists all shows and their genres from the hbtn_0d_tvshows database,
--- showing NULL if a show has no genre.
-SELECT tv_shows.title, genres.name
-FROM tv_shows
-LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
-LEFT JOIN genres ON tv_show_genres.genre_id = genres.id
-ORDER BY tv_shows.title ASC, genres.name ASC;
+-- SHOWS TITLE OF ALL SHOWS THAT ARE COMEDIES
+SELECT t.`title`
+ FROM `tv_shows` AS t
+	INNER JOIN `tv_show_genres` AS s
+	ON t.`id` = s.`show_id`
+	INNER JOIN `tv_genres` AS g
+	ON g.`id` = s.`genre_id`
+	WHERE g.`name` = "Comedy"
+ORDER BY t.`title`;
