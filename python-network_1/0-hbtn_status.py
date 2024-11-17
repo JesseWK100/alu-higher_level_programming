@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""Fetches https://alu-intranet.hbtn.io/status using urllib"""
+"""
+This script fetches the status from https://alu-intranet.hbtn.io/status
+using the urllib package and displays the body of the response.
+"""
+
 import urllib.request
 
 url = 'https://alu-intranet.hbtn.io/status'
