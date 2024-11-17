@@ -9,6 +9,7 @@ It uses the urllib and sys packages.
 import urllib.request
 import sys
 
+
 def fetch_request_id(url):
     """Fetch the X-Request-Id header from the URL response and display it."""
     with urllib.request.urlopen(url) as response:
