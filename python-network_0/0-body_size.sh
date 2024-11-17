@@ -1,20 +1,9 @@
-#!/usr/bin/python3
-"""
-Script that takes a URL, sends a request to the URL, 
-and displays the size of the body of the response in bytes.
-"""
+#!/bin/bash
+# Script that takes a URL, sends a request, and displays the size of the response body in bytes
 
-import sys
-import requests
+if [ -z "$1" ]; then
+  echo "Usage: $0 <URL>"
+  exit 1
+fi
 
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: ./0-body_size.py <URL>")
-        sys.exit(1)
-    
-    url = sys.argv[1]
-    try:
-        response = requests.get(url)
-        print(len(response.content))
-    except requests.RequestException as e:
-        print(f"Error: {e}")
+curl -s -o /dev/null -w "%{size_download}\n" "$1"
