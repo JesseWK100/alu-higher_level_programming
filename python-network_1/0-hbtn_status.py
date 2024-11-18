@@ -1,20 +1,20 @@
 #!/usr/bin/python3
 """
-This script fetches http://0.0.0.0:5050/status
-and displays the response body with information about
-its type, content, and utf-8 decoded content.
-
-Usage:
-    ./0-hbtn_status.py
+Documentation
+Fetches data from the url using
+the urllib module in python
 """
 
 import urllib.request
 
-if __name__ == "__main__":
-    url = "http://0.0.0.0:5050/status"
-    with urllib.request.urlopen(url) as response:
-        body = response.read()
+url = 'https://intranet.hbtn.io/status'
+if url.startswith('https://'):
+    url = 'https://alu-intranet.hbtn.io/status'
+
+if __name__ == '__main__':
+    with urllib.request.urlopen(url) as f:
+        content = f.read()
         print("Body response:")
-        print("\t- type: {}".format(type(body)))
-        print("\t- content: {}".format(body))
-        print("\t- utf8 content: {}".format(body.decode('utf-8')))
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+        print("\t- utf8 content: {}".format(content.decode('utf-8')))
