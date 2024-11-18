@@ -1,25 +1,20 @@
 #!/usr/bin/python3
 """
-This script fetches the status of a URL and displays its response body with
-the requested format.
+This script fetches https://alu-intranet.hbtn.io/status
+and displays the response body with information about
+its type, content, and utf-8 decoded content.
 
-It uses the urllib package for fetching the content.
+Usage:
+    ./0-hbtn_status.py
 """
 
 import urllib.request
 
-def fetch_status():
-    """Fetch the content from the URL and display the response body."""
-    url = 'https://alu-intranet.hbtn.io/status'
-
+if __name__ == "__main__":
+    url = "https://alu-intranet.hbtn.io/status"
     with urllib.request.urlopen(url) as response:
         body = response.read()
-        
-        # Printing the body content with the required formatting
         print("Body response:")
-        print(f"\t- type: {type(body)}")
-        print(f"\t- content: {body}")
-        print(f"\t- utf8 content: {body.decode('utf-8')}")
-
-if __name__ == "__main__":
-    fetch_status()
+        print("\t- type: {}".format(type(body)))
+        print("\t- content: {}".format(body))
+        print("\t- utf8 content: {}".format(body.decode('utf-8')))
