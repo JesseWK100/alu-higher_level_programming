@@ -2,9 +2,11 @@
 """
 This module defines the matrix_divided function.
 
-The function takes a matrix (list of lists) of integers or floats and a divisor.
-It returns a new matrix with all elements divided by the divisor, rounded to 2 decimal places.
+The function takes a matrix (list of lists) of integers or floats and divisor
+It returns a new matrix with all elements divided by the divisor, rounded to 2
+decimal places
 """
+
 
 def matrix_divided(matrix, div):
     """
@@ -15,7 +17,8 @@ def matrix_divided(matrix, div):
         div: The divisor, must be an integer or float.
 
     Returns:
-        A new matrix with all elements divided by div, rounded to 2 decimal places.
+        A new matrix with all elements divided by div, rounded to 2 decimal
+        places
 
     Raises:
         TypeError: If the matrix is not a list of lists of integers/floats,
