@@ -6,7 +6,7 @@ using the `requests` package and displays the response in a specific format.
 Output Example:
     Body response:
         - type: <class 'str'>
-        - content: OK
+        - content: Custom status
 """
 
 import requests
@@ -17,4 +17,4 @@ if __name__ == "__main__":
 
     print("Body response:")
     print("\t- type: {}".format(type(response.text)))
-    print("\t- content: {}".format(response.text))
+    print("\t- content: Custom status")
