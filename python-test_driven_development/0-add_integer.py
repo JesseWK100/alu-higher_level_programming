@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+"""
+This module defines the add_integer function.
+
+The function takes two arguments, a and b, which must be integers or floats.
+It returns their sum as an integer. If the arguments are not integers or
+floats, a TypeError is raised.
+"""
+
 def add_integer(a, b=98):
     """
     Adds two integers or floats after casting them to integers.
