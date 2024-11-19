@@ -7,6 +7,7 @@ Both first_name and last_name must be strings, otherwise it raises
 a TypeError.
 """
 
+
 def say_my_name(first_name, last_name=""):
     """
     Prints 'My name is <first name> <last name>'.
