@@ -2,7 +2,8 @@
 """
 This module defines the text_indentation function.
 
-The function prints a text with 2 new lines after each of these characters: ., ? and :
+The function prints a text with 2 new lines after each of these
+characters: ., ? and :
 """
 
 
