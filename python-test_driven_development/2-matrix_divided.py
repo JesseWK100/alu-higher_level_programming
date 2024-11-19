@@ -2,9 +2,9 @@
 """
 This module defines the matrix_divided function.
 
-The function takes a matrix (list of lists) of integers or floats and divisor
-It returns a new matrix with all elements divided by the divisor, rounded to 2
-decimal places
+The function takes a matrix (list of lists) of integers or floats
+and a divisor. It returns a new matrix with all elements divided
+by the divisor, rounded to 2 decimal places.
 """
 
 
@@ -17,20 +17,17 @@ def matrix_divided(matrix, div):
         div: The divisor, must be an integer or float.
 
     Returns:
-        A new matrix with all elements divided by div, rounded to 2 decimal
-        places
+        A new matrix with all elements divided by div, rounded
+        to 2 decimal places.
 
     Raises:
-        TypeError: If the matrix is not a list of lists of integers/floats,
-                   if each row of the matrix is not of the same size,
-                   or if div is not a number (integer or float).
+        TypeError: If the matrix is not a list of lists of integers/
+                   floats, if each row of the matrix is not of the
+                   same size, or if div is not a number (integer or float).
         ZeroDivisionError: If div is equal to 0.
     """
-    if not all(isinstance(row, list) for row in matrix) or \
-        not all(
-       isinstance(num, (int, float))
-       for row in matrix
-       for num in row):
+    if not all(isinstance(row, list) for row in matrix) or not all(
+       isinstance(num, (int, float)) for row in matrix for num in row):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     row_length = len(matrix[0])
