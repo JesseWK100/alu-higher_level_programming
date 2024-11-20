@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-This script lists all states with a name that matches the argument from the database hbtn_0e_0_usa.
-It takes four arguments: mysql username, mysql password, database name, and state name searched.
+This script lists all states with a name that matches the argument from the
+database hbtn_0e_0_usa.
+It takes four arguments: mysql username, mysql password, database name, and
+state name searched.
 """
 
 import MySQLdb
@@ -22,7 +24,9 @@ if __name__ == "__main__":
 
     # Execute the SQL query to select states where name matches the argument
     cursor.execute(
-        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(sys.argv[4])
+            "SELECT * FROM states "
+            "WHERE BINARY name = '{}' "
+            "ORDER BY id ASC".format(sys.argv[4])
     )
 
     # Fetch all the results of the query
