@@ -21,7 +21,9 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the SQL query to select states where name matches the argument
-    cursor.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(sys.argv[4]))
+    cursor.execute(
+        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(sys.argv[4])
+    )
 
     # Fetch all the results of the query
     rows = cursor.fetchall()
