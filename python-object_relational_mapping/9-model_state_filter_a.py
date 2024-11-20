@@ -26,7 +26,12 @@ if __name__ == "__main__":
     session = Session()
 
     # Query all State objects that contain the letter 'a' and sort them by id
-    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    states = (
+            session.query(State)
+            .filter(State.name.like('%a%'))
+            .order_by(State.id)
+            .all()
+    )
 
     # Print the results
     for state in states:
