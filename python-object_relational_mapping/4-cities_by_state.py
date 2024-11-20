@@ -20,7 +20,8 @@ if __name__ == "__main__":
     # Create a cursor object to interact with the database
     cursor = db.cursor()
 
-    # Execute the SQL query to select all cities, sorted by city id in ascending order
+    # Execute the SQL query to select all cities. Sort them by city ID 
+    # in ascending order.
     cursor.execute("""
         SELECT cities.id, cities.name, states.name
         FROM cities
