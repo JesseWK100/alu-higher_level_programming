@@ -22,7 +22,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the SQL query to select all states with names starting with 'N'
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY
+                    id ASC")
 
     # Fetch all the results of the query
     rows = cursor.fetchall()
