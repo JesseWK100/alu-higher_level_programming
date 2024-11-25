@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module defines the Rectangle class.
+"""
+
 class Rectangle:
     """Represents a rectangle with width, height, x, y, and id attributes."""
 
@@ -139,4 +143,3 @@ class Rectangle:
         for i, arg in enumerate(args):
             if i < len(attributes):
                 setattr(self, attributes[i], arg)
-
