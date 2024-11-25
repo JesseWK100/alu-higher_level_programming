@@ -76,3 +76,10 @@ class Rectangle(Base):
         """Print the Rectangle instance using the `#` character."""
         for _ in range(self.height):
             print("#" * self.width)
+
+    def __str__(self):
+        """Override the __str__ method."""
+        return (
+            f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+            f"{self.width}/{self.height}"
+        )
