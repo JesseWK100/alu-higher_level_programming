@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 class Rectangle:
     """Represents a rectangle with width, height, x, y, and id attributes."""
 
@@ -121,3 +120,22 @@ class Rectangle:
             print(" " * self.x, end="")
             # Print the rectangle
             print("#" * self.width)
+
+    def update(self, *args):
+        """
+        Assigns an argument to each attribute.
+
+        Args:
+            *args: Variable length argument list. The arguments should be
+                   in the following order:
+                   1st argument: id attribute
+                   2nd argument: width attribute
+                   3rd argument: height attribute
+                   4th argument: x attribute
+                   5th argument: y attribute
+        """
+        attributes = ["id", "width", "height", "x", "y"]
+        for i, arg in enumerate(args):
+            if i < len(attributes):
+                setattr(self, attributes[i], arg)
+
