@@ -1,89 +1,123 @@
 #!/usr/bin/python3
-"""Defines the Rectangle class."""
-from models.base import Base
-
-
-class Rectangle(Base):
-    """Represents a rectangle."""
+class Rectangle:
+    """Represents a rectangle with width, height, x, y, and id attributes."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize a new Rectangle instance."""
-        super().__init__(id)
+        """
+        Initialize a new Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int, optional): The x-coordinate of the rectangle. Defaults to 0.
+            y (int, optional): The y-coordinate of the rectangle. Defaults to 0.
+            id (int, optional): The id of the rectangle. Defaults to None.
+        """
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        self.id = id
 
     @property
     def width(self):
+        """Get the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        self.validate_integer("width", value)
-        self.validate_positive("width", value)
+        """
+        Set the width of the rectangle.
+
+        Args:
+            value (int): The new width value.
+
+        Raises:
+            TypeError: If the width is not an integer.
+            ValueError: If the width is less than or equal to 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
     def height(self):
+        """Get the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        self.validate_integer("height", value)
-        self.validate_positive("height", value)
+        """
+        Set the height of the rectangle.
+
+        Args:
+            value (int): The new height value.
+
+        Raises:
+            TypeError: If the height is not an integer.
+            ValueError: If the height is less than or equal to 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
     def x(self):
+        """Get the x-coordinate of the rectangle."""
         return self.__x
 
     @x.setter
     def x(self, value):
-        self.validate_integer("x", value)
-        self.validate_non_negative("x", value)
+        """
+        Set the x-coordinate of the rectangle.
+
+        Args:
+            value (int): The new x value.
+
+        Raises:
+            TypeError: If the x is not an integer.
+            ValueError: If the x is less than 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
     def y(self):
+        """Get the y-coordinate of the rectangle."""
         return self.__y
 
     @y.setter
     def y(self, value):
-        self.validate_integer("y", value)
-        self.validate_non_negative("y", value)
+        """
+        Set the y-coordinate of the rectangle.
+
+        Args:
+            value (int): The new y value.
+
+        Raises:
+            TypeError: If the y is not an integer.
+            ValueError: If the y is less than 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
 
-    @staticmethod
-    def validate_integer(name, value):
-        """Validate that the value is an integer."""
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-
-    @staticmethod
-    def validate_positive(name, value):
-        """Validate that the value is > 0."""
-        if value <= 0:
-            raise ValueError(f"{name} must be > 0")
-
-    @staticmethod
-    def validate_non_negative(name, value):
-        """Validate that the value is >= 0."""
-        if value < 0:
-            raise ValueError(f"{name} must be >= 0")
-
     def display(self):
-    """Prints the Rectangle instance using the character #,
-    considering x and y offsets."""
-    # Print vertical offset
-    print("\n" * self.y, end="")
-    # Print each row of the rectangle with horizontal offset
-    for _ in range(self.height):
-        print(" " * self.x + "#" * self.width)
+        """Prints the Rectangle instance with the character '#', considering x and y offsets."""
+        # Print the y offset
+        print("\n" * self.y, end="")
 
-    def __str__(self):
-        """Override the __str__ method."""
-        return (
-            f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
-            f"{self.width}/{self.height}"
-        )
+        for i in range(self.height):
+            # Print the x offset
+            print(" " * self.x, end="")
+            # Print the rectangle
+            print("#" * self.width)
