@@ -1,18 +1,10 @@
-#!/usr/bin/python3
-"""Defines the Rectangle class."""
-from models.base import Base
-
-
-class Rectangle(Base):
-    """Represents a rectangle."""
-
+class Rectangle:
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize a new Rectangle instance."""
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        self.id = id
 
     @property
     def width(self):
@@ -20,8 +12,10 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        self.validate_integer("width", value)
-        self.validate_positive("width", value)
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -30,8 +24,10 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        self.validate_integer("height", value)
-        self.validate_positive("height", value)
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -40,8 +36,10 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        self.validate_integer("x", value)
-        self.validate_non_negative("x", value)
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -50,36 +48,19 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.validate_integer("y", value)
-        self.validate_non_negative("y", value)
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
 
-    @staticmethod
-    def validate_integer(name, value):
-        """Validate that the value is an integer."""
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-
-    @staticmethod
-    def validate_positive(name, value):
-        """Validate that the value is > 0."""
-        if value <= 0:
-            raise ValueError(f"{name} must be > 0")
-
-    @staticmethod
-    def validate_non_negative(name, value):
-        """Validate that the value is >= 0."""
-        if value < 0:
-            raise ValueError(f"{name} must be >= 0")
-
     def display(self):
-        """Print the Rectangle instance using the `#` character."""
-        for _ in range(self.height):
+        """Prints the Rectangle instance with the character '#'"""
+        # Print the y offset
+        print("\n" * self.y, end="")
+        
+        for i in range(self.height):
+            # Print the x offset
+            print(" " * self.x, end="")
+            # Print the rectangle
             print("#" * self.width)
-
-    def __str__(self):
-        """Override the __str__ method."""
-        return (
-            f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
-            f"{self.width}/{self.height}"
-        )
