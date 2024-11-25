@@ -116,7 +116,8 @@ class Rectangle:
         self.__y = value
 
     def display(self):
-        """Prints the Rectangle instance with the character '#', considering x and y offsets."""
+        """Prints the Rectangle instance with the character '#', considering
+        x and y offsets."""
         # Print the y offset
         print("\n" * self.y, end="")
 
