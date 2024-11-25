@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Rectangle:
     """Represents a rectangle with width, height, x, y, and id attributes."""
 
