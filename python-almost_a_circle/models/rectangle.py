@@ -1,6 +1,17 @@
-#!/usr/bin/python3
 class Rectangle:
+    """Represents a rectangle with width, height, x, y, and id attributes."""
+
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Initialize a new Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int, optional): The x-coordinate of the rectangle. Defaults to 0.
+            y (int, optional): The y-coordinate of the rectangle. Defaults to 0.
+            id (int, optional): The id of the rectangle. Defaults to None.
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -9,10 +20,21 @@ class Rectangle:
 
     @property
     def width(self):
+        """Get the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """
+        Set the width of the rectangle.
+
+        Args:
+            value (int): The new width value.
+
+        Raises:
+            TypeError: If the width is not an integer.
+            ValueError: If the width is less than or equal to 0.
+        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -21,10 +43,21 @@ class Rectangle:
 
     @property
     def height(self):
+        """Get the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """
+        Set the height of the rectangle.
+
+        Args:
+            value (int): The new height value.
+
+        Raises:
+            TypeError: If the height is not an integer.
+            ValueError: If the height is less than or equal to 0.
+        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -33,10 +66,21 @@ class Rectangle:
 
     @property
     def x(self):
+        """Get the x-coordinate of the rectangle."""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """
+        Set the x-coordinate of the rectangle.
+
+        Args:
+            value (int): The new x value.
+
+        Raises:
+            TypeError: If the x is not an integer.
+            ValueError: If the x is less than 0.
+        """
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -45,10 +89,21 @@ class Rectangle:
 
     @property
     def y(self):
+        """Get the y-coordinate of the rectangle."""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """
+        Set the y-coordinate of the rectangle.
+
+        Args:
+            value (int): The new y value.
+
+        Raises:
+            TypeError: If the y is not an integer.
+            ValueError: If the y is less than 0.
+        """
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -56,10 +111,10 @@ class Rectangle:
         self.__y = value
 
     def display(self):
-        """Prints the Rectangle instance with the character '#'"""
+        """Prints the Rectangle instance with the character '#'."""
         # Print the y offset
         print("\n" * self.y, end="")
-        
+
         for i in range(self.height):
             # Print the x offset
             print(" " * self.x, end="")
