@@ -2,6 +2,7 @@
 """Rectangle module"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """Rectangle class inheriting from Base"""
 
