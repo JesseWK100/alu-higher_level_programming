@@ -63,8 +63,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
     """
-    Update attributes using positional arguments (*args) or keyword arguments
-    (**kwargs).
+    Update attributes using positional arguments (*args) or keyword arguments (**kwargs).
 
     *args: No-keyword arguments in the order id, width, height, x, y.
     **kwargs: Key-value arguments for attributes.
