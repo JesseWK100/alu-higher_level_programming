@@ -1,5 +1,13 @@
 #!/usr/bin/python3
 # File: models/square.py
+
+"""
+This module defines the Square class.
+
+The Square class inherits from the Rectangle class and represents
+a geometric shape where the width and height are equal.
+"""
+
 from models.rectangle import Rectangle
 
 
