@@ -68,6 +68,10 @@ class Rectangle(Base):
             if index < len(attributes):
                 setattr(self, attributes[index], value)
 
+        # Ensure id is properly updated and matches the expected behavior
+        if self.id is None:
+            self.id = Base._Base__nb_objects
+
     def display(self):
         """Display the Rectangle using the `#` character."""
         print("\n" * self.y, end="")
