@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def update(self, *args, **kwargs):
     """
     Update attributes using positional arguments (*args) or keyword arguments (**kwargs).
