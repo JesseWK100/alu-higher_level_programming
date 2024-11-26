@@ -1,91 +1,78 @@
 #!/usr/bin/python3
-"""Rectangle module"""
-from models.base import Base
+"""
+This module defines the Rectangle class and its methods.
 
-class Rectangle(Base):
-    """Rectangle class inheriting from Base"""
+The Rectangle class can be used to create rectangular objects with specific
+attributes such as width, height, x and y coordinates, and an id. The class
+also includes methods for updating these attributes using both positional
+and keyword arguments.
+"""
+
+class Rectangle:
+    """ A class to represent a rectangle. """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize a Rectangle instance."""
-        super().__init__(id)
+        """
+        Initialize a new Rectangle instance.
+
+        Parameters:
+        width (int): The width of the rectangle.
+        height (int): The height of the rectangle.
+        x (int): The x-coordinate of the rectangle's position.
+        y (int): The y-coordinate of the rectangle's position.
+        id (int): The id of the rectangle.
+        """
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-
-    @property
-    def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
-
-    @property
-    def height(self):
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
-        self.__height = value
-
-    @property
-    def x(self):
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        if type(value) is not int:
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = value
-
-    @property
-    def y(self):
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        if type(value) is not int:
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = value
+        self.id = id
 
     def update(self, *args, **kwargs):
-    """
-    Update attributes using positional arguments (*args) or keyword arguments (**kwargs).
+        """
+        Update attributes of the Rectangle instance.
 
-    *args: No-keyword arguments in the order id, width, height, x, y.
-    **kwargs: Key-value arguments for attributes.
-    """
-    # Use *args if it exists and is not empty
-    if args:
-        attributes = ['id', 'width', 'height', 'x', 'y']
-        for index, value in enumerate(args):
-            if index < len(attributes):
-                setattr(self, attributes[index], value)
-    # Otherwise, use **kwargs
-    else:
-        for key, value in kwargs.items():
-            if hasattr(self, key):
-                setattr(self, key, value)
+        Parameters:
+        *args: Positional arguments in the order of id, width, height, x, y.
+        **kwargs: Keyword arguments for setting attributes.
 
-    def display(self):
-        """Display the Rectangle using the `#` character."""
-        print("\n" * self.y, end="")
-        for _ in range(self.height):
-            print(" " * self.x + "#" * self.width)
+        If *args is non-empty, attributes will be assigned in the following 
+        order: id, width, height, x, y. If *args is empty, **kwargs will be 
+        used to assign attributes by key.
+        """
+        if args and len(args) != 0:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for i, value in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], value)
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
     def __str__(self):
-        """Return the string representation of the Rectangle."""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        """
+        Return the string representation of the Rectangle.
+
+        Returns:
+        str: A formatted string describing the rectangle's attributes.
+        """
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+                f"{self.width}/{self.height}")
+
+# Example usage
+if __name__ == "__main__":
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(height=1)
+    print(r1)
+
+    r1.update(width=1, x=2)
+    print(r1)
+
+    r1.update(y=1, width=2, x=3, id=89)
+    print(r1)
+
+    r1.update(x=1, height=2, y=3, width=4)
+    print(r1)
