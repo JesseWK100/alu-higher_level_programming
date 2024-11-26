@@ -2,6 +2,7 @@
 """Rectangle module"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """Rectangle class inheriting from Base"""
 
@@ -80,4 +81,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """Return the string representation of the Rectangle."""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return (
+            f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+            f"{self.width}/{self.height}"
+        )
