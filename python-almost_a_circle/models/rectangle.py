@@ -66,7 +66,7 @@ if __name__ == "__main__":
     print(r1)
 
     r1.update(height=1)
-    print(r1)
+    print(r1
 
     r1.update(width=1, x=2)
     print(r1)
