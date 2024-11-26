@@ -2,7 +2,6 @@
 """Rectangle module"""
 from models.base import Base
 
-
 class Rectangle(Base):
     """Rectangle class inheriting from Base"""
 
@@ -62,8 +61,19 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+    def update(self, *args):
+        """Update attributes using positional arguments."""
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        for index, value in enumerate(args):
+            if index < len(attributes):
+                setattr(self, attributes[index], value)
+
     def display(self):
         """Display the Rectangle using the `#` character."""
         print("\n" * self.y, end="")
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
+
+    def __str__(self):
+        """Return the string representation of the Rectangle."""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
