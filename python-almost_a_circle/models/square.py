@@ -10,7 +10,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """
         Initialize a new Square instance.
-        
+
         Args:
             size (int): The size of the square (both width and height).
             x (int): The x-coordinate of the square.
@@ -22,3 +22,4 @@ class Square(Rectangle):
     def __str__(self):
         """Override the __str__ method to return the square description."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
