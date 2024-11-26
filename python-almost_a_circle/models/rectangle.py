@@ -45,10 +45,10 @@ class Rectangle:
             for i, value in enumerate(args):
                 if i < len(attributes):
                     setattr(self, attributes[i], value)
-        else:
-            for key, value in kwargs.items():
-                if hasattr(self, key):
-                    setattr(self, key, value)
+        
+        # Ensure id is properly updated and matches the expected behavior
+        if self.id is None:
+            self.id = Base._Base__nb_objects
 
     def __str__(self):
         """
