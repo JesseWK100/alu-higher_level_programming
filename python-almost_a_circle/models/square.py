@@ -5,7 +5,6 @@ This module defines the Square class, which inherits from Rectangle.
 
 from models.rectangle import Rectangle
 
-
 class Square(Rectangle):
     """A class representing a square, inheriting from Rectangle.
 
@@ -53,3 +52,7 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
+
+    def __str__(self):
+        """Return the string representation of the square."""
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
