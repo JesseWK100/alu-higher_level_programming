@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # models/rectangle.py
 
 class Rectangle(Base):
