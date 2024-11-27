@@ -5,6 +5,7 @@ This module defines the Square class, which inherits from Rectangle.
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """A class representing a square, inheriting from Rectangle.
 
