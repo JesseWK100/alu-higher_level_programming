@@ -1,32 +1,22 @@
 #!/usr/bin/python3
-# File: models/square.py
-
-"""
-This module defines the Square class.
-
-The Square class inherits from the Rectangle class and represents
-a geometric shape where the width and height are equal.
-"""
-
+"""Module containing the Square class that inherits from Rectangle."""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Class Square that inherits from Rectangle"""
+    """A class representing a square, inheriting from Rectangle."""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """
-        Initialize a Square instance.
-        :param size: The size of the square (width and height are equal)
-        :param x: The x-coordinate
-        :param y: The y-coordinate
-        :param id: The id of the square
+        """Initialize a new Square.
+
+        Args:
+            size (int): The size of the square (width and height).
+            x (int): The x-coordinate of the square.
+            y (int): The y-coordinate of the square.
+            id (int): The identifier of the square.
         """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """
-        Return the string representation of the Square instance.
-        Format: [Square] (<id>) <x>/<y> - <size>
-        """
+        """Override the __str__ method to return the Square description."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
