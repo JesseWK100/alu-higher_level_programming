@@ -1,58 +1,56 @@
+
 #!/usr/bin/python3
-"""
-This module defines the Square class, which inherits from Rectangle.
-"""
+"""Class Square that inherit from Rectangle"""
 
 from models.rectangle import Rectangle
 
-class Square(Rectangle):
-    """A class representing a square, inheriting from Rectangle.
 
-    Attributes:
-        size (int): The size of the square's sides.
-        x (int): The x-coordinate of the square's position.
-        y (int): The y-coordinate of the square's position.
-        id (int): The identity of the square.
-    """
+class Square(Rectangle):
+    """"
+            Class Square inheriting Rectangle
+            Attr :
+                    id: number
+                    size: number
+                    x: number
+                    y: number
+        """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Initialize a new Square instance.
-
-        Args:
-            size (int): The size of the square's sides.
-            x (int): The x-coordinate of the square's position. Default is 0.
-            y (int): The y-coordinate of the square's position. Default is 0.
-            id (int): The identity of the square. Default is None.
-        """
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """Getter for size attribute.
-
-        Returns:
-            int: The size of the square's sides.
-        """
+        """Size getter"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """Setter for size attribute with validation.
-
-        Args:
-            value (int): The size to set for the square's sides.
-
-        Raises:
-            TypeError: If `value` is not an integer.
-            ValueError: If `value` is less than or equal to 0.
-        """
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
+        """Size setter"""
         self.width = value
         self.height = value
 
     def __str__(self):
-        """Return the string representation of the square."""
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+        """return [Square] (<id>) <x>/<y> - <size>"""
+        return "[Square] ({}) {}/{} - {}" \
+            .format(self.id, self.x, self.y, self.size)
+
+    def update(self, *args, **kwargs):
+        """assigns attributes"""
+        if len(args) != 0:
+            try:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
+            except IndexError:
+                pass
+        elif len(kwargs) != 0:
+            self.id = kwargs["id"] if "id" in kwargs else self.id
+            self.size = kwargs["size"] if "size" in kwargs \
+                else self.size
+            self.x = kwargs["x"] if "x" in kwargs else self.x
+            self.y = kwargs["y"] if "y" in kwargs else self.y
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
