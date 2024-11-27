@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module containing the Square class that inherits from Rectangle."""
+"""Module containing the Square class."""
 from models.rectangle import Rectangle
 
 
@@ -20,3 +20,9 @@ class Square(Rectangle):
     def __str__(self):
         """Override the __str__ method to return the Square description."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    def display(self):
+        """Prints the square using the `#` character."""
+        print("\n" * self.y, end="")
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
