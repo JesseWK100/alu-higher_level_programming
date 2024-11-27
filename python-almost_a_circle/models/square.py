@@ -25,8 +25,10 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """Setter for size, validates and sets width and height to the same value."""
-        self.width = value  # Uses Rectangle's width validation
-        self.height = value  # Uses Rectangle's height validation
+        # Trigger Rectangle's width validation by assigning to width
+        self.width = value
+        # Trigger Rectangle's height validation by assigning to height
+        self.height = value
 
     def __str__(self):
         """Override the __str__ method to return the Square description."""
