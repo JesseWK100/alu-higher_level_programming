@@ -1,41 +1,50 @@
 #!/usr/bin/python3
-"""Module containing the Square class."""
+"""
+This module defines the Square class, which inherits from Rectangle.
+"""
+
 from models.rectangle import Rectangle
 
-
 class Square(Rectangle):
-    """A class representing a square, inheriting from Rectangle."""
+    """A class representing a square, inheriting from Rectangle.
+
+    Attributes:
+        size (int): The size of the square's sides.
+        x (int): The x-coordinate of the square's position.
+        y (int): The y-coordinate of the square's position.
+        id (int): The identity of the square.
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Initialize a new Square.
+        """Initialize a new Square instance.
 
         Args:
-            size (int): The size of the square (width and height).
-            x (int): The x-coordinate of the square.
-            y (int): The y-coordinate of the square.
-            id (int): The identifier of the square.
+            size (int): The size of the square's sides.
+            x (int): The x-coordinate of the square's position. Default is 0.
+            y (int): The y-coordinate of the square's position. Default is 0.
+            id (int): The identity of the square. Default is None.
         """
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """Getter for size."""
+        """Getter for size attribute.
+
+        Returns:
+            int: The size of the square's sides.
+        """
         return self.width
 
     @size.setter
     def size(self, value):
-        """Setter for size, validates and sets width and height to the same value."""
-        # Trigger Rectangle's width validation by assigning to width
+        """Setter for size attribute with validation.
+
+        Args:
+            value (int): The size to set for the square's sides.
+
+        Raises:
+            TypeError: If `value` is not an integer.
+            ValueError: If `value` is less than or equal to 0.
+        """
         self.width = value
-        # Trigger Rectangle's height validation by assigning to height
         self.height = value
-
-    def __str__(self):
-        """Override the __str__ method to return the Square description."""
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
-    def display(self):
-        """Prints the square using the `#` character."""
-        print("\n" * self.y, end="")
-        for _ in range(self.height):
-            print(" " * self.x + "#" * self.width)
