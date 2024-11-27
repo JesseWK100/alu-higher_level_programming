@@ -17,6 +17,17 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """Getter for size."""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """Setter for size, validates and sets width and height to the same value."""
+        self.width = value  # Uses Rectangle's width validation
+        self.height = value  # Uses Rectangle's height validation
+
     def __str__(self):
         """Override the __str__ method to return the Square description."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
